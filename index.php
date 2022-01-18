@@ -51,7 +51,10 @@ if(isset($_POST['register'])) {
         <input id="login" type="submit" value="Login" name="login">
         <br><br>
         <h2>Don't Have an Account?</h2>
+<div class="text-center">      
         <input id="register" type="submit" value="Create Account" name="register">
+</div>  
+  
     </form>
 </div>
 
