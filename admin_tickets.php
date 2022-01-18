@@ -59,7 +59,7 @@ if(isset($_POST['delete'])) {
 <html>
 <head>
     <title>Ticket Portal</title>
-    <link rel="stylesheet" href="view/styles.css" />
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
     <div class='headers'><br><br>
@@ -71,18 +71,24 @@ if(isset($_POST['delete'])) {
             <li><?php echo $file ?></li>
         <?php endforeach; ?>
     </ul>
-    <input id="delete" type="submit" value="Delete File" name="delete">
+
+    
+<br>
+<h5 style="border:green;border-width: 6px; border-style: solid;">Delete Ticket</h5>
+        
+        <input id="delete" type="submit" value="Delete File" name="delete">
             <select name="fileToDelete">
             <?php foreach(FileUtilities::GetFileList($dir) as $file) : ?>
                 <option value="<?php echo $file; ?>"><?php echo $file; ?>
                 </option>
             <?php endforeach; ?></select>
-        <br>
-        <br>
+     <br>
+    <br>
+        <h4 style="border:green;border-width: 6px; border-style: solid;">Modifly Ticket</h4>
         <textarea id="editFile" name="editFile" rows="5" cols="70">
             <?php echo $editFile ?></textarea>
-        <br>
-        <br>
+    <br>
+    <br>
         <input id="save" type="submit" value="Save" name="save">
         <input id="load" type="submit" value="Load/Edit Ticket" name="load">
             <select name="fileToUpdate">
@@ -90,28 +96,42 @@ if(isset($_POST['delete'])) {
                 <option value="<?php echo $file; ?>"><?php echo $file; ?>
                 </option>
             <?php endforeach; ?></select>
-        <br>
-        <br>
+    <br>
+    <br>
+        <h3 style="border:green;border-width: 6px; border-style: solid;">View Tickets</h3>       
             <textarea id="viewFile" name="viewFile" rows="5" cols="70"
                 disabled placeholder="Ticket View Panel"><?php echo $viewFile ?></textarea>
-        <br>
-        <br>
+    <br>
+    <br>
             <input id="view" type="submit" value="View Ticket" name="view">
             <select name="fileToView">
             <?php foreach(FileUtilities::GetFileList($dir) as $file) : ?>
                 <option value="<?php echo $file; ?>"><?php echo $file; ?>
                 </option>
             <?php endforeach; ?></select>
-        <br>
-        <br>
+       
+            
+    <br>
+    <br>
+            
+        <h2 style="border:green;border-width: 6px; border-style: solid;">Create New Ticket</h2>
+            <input id="text_area" type="text" name="newFileName" placeholder="Save Ticket As..."> 
+     <br>
+     <br>             
             <textarea id="createFile" name="createFile" rows="5" cols="70" placeholder="Create Ticket Window"></textarea>
-        <br>
-        <br>
+     <br>  
+     <br>     
             <input id="create" type="submit" value="Create" name="create">
-            <input id="text_area" type="text" name="newFileName" placeholder="Save Ticket As...">
-        <br>
-        <br>
+           
+        
+     <br>
+     <br>
+        
+
+        
+        <div class="footer">
             <input id="home" type="submit" value="Home" name="home">
+        </div>    
     </form>
 </body>
 </html>
